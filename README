@@ -9,6 +9,10 @@ Set up:
 
 Make sure have Moose available in path.
 Check out this repository.
+
+git clone https://github.com/mjemmeson/bb-moose-workshop.git
+
+
 Create a new branch.
 
 load your local::lib for current session
