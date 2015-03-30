@@ -1,0 +1,47 @@
+Broadbean Moose Workhop
+
+Aim:
+
+To produce the code (in lib/) using Moose which passes the tests in (t/)
+
+
+Set up:
+
+Make sure have Moose available in path.
+Check out this repository.
+Create a new branch.
+
+load your local::lib for current session
+e.g.:
+    eval $( perl -Mlocal::lib=./local )
+
+To run the tests:
+
+prove -lvr t           # all tests
+prove -lv t/advert.t   # specific tests
+
+
+Code Snippets:
+
+sub _create_html_body {
+    my ( $title, $body ) = @_;
+
+    my @lines = split /\n/, $body;
+
+    my $html = "<h2>$title</h2>\n";
+    foreach my $line (@lines) {
+        $html .= $line ? "<p>$line</p>\n" : "<br>\n";
+    }
+
+    return $html;
+}
+
+
+deluxe adverts:
+
+    $html_body =~ s{<(/?)h2>}{<$1h1>}g;
+
+    $html_body .= "<br>\n<p>FREE spoon with every application!</p>";
+
+
+
