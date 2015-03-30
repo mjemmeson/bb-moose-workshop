@@ -33,6 +33,10 @@ Must be available weekends.
         ),
         "created advert";
 
+    is $advert->title, "Astronaut Required (Part Time)", "title set";
+    like $advert->body, qr/Astronaut required for exciting new missions/,
+        "body set ok";
+
     ok my $html_body = $advert->html_body, "got HTML body";
 
     is $html_body, q{<h2>Astronaut Required (Part Time)</h2>
